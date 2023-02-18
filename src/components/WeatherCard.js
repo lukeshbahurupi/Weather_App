@@ -45,7 +45,7 @@ class WeatherBoards extends Component {
       visibility,
       sunset,
     } = this.props.weatherData;
-    console.log(this.props);
+    // console.log(this.props);
     const celcius = Math.round(temp - 273.15);
     const saveBtn = (
       <Button

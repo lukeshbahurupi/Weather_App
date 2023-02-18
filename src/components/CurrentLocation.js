@@ -54,7 +54,7 @@ const CurrentLocation = (props) => {
           callWeatherData();
         }}
       >
-        <i class="icon crosshairs"></i>
+        <i className="icon crosshairs"></i>
       </Button>
       {/* </div> */}
 
