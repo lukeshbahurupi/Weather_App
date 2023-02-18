@@ -106,6 +106,7 @@ class App extends Component {
           callBackFromParent={this.callWeatherData}
           error={errorMessage}
         />
+        <CurrentLocation updateWeatherData={this.updateWeatherData} />
         {searchDone && (
           <WeatherCard
             weatherData={weatherData}
@@ -119,7 +120,6 @@ class App extends Component {
             callBackFromParent={this.callWeatherData}
           />
         )}
-        <CurrentLocation updateWeatherData={this.updateWeatherData} />
       </div>
     );
   }

@@ -1,16 +1,16 @@
 import React from "react";
+import "../css/CurrentLocation.css";
 import { useGeolocated } from "react-geolocated";
 import { Button } from "semantic-ui-react";
 import API_KEY from "../config";
 const CurrentLocation = (props) => {
   //   console.log(props.state);
-  const { coords, isGeolocationAvailable, isGeolocationEnabled } =
-    useGeolocated({
-      positionOptions: {
-        enableHighAccuracy: false,
-      },
-      userDecisionTimeout: 5000,
-    });
+  const { coords } = useGeolocated({
+    positionOptions: {
+      enableHighAccuracy: false,
+    },
+    userDecisionTimeout: 5000,
+  });
 
   function callWeatherData() {
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords.latitude}&lon=${coords.longitude}&appid=${API_KEY}`;
@@ -46,12 +46,18 @@ const CurrentLocation = (props) => {
       });
   }
   return (
-    <div>
+    <div className="button">
+      {/* <div className="icon"> */}
       <Button
+        className="circular ui grey icon button "
         onClick={() => {
           callWeatherData();
         }}
-      />
+      >
+        <i class="icon crosshairs"></i>
+      </Button>
+      {/* </div> */}
+
       {/* <p>latitude: {coords.latitude}</p>
       <p>longitude: {coords.longitude}</p> */}
     </div>
